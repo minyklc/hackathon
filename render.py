@@ -26,7 +26,11 @@ def draw_map(surface, map_data, screen_width):
         draw_tile(x, y, ROCK_COLOR, surface, screen_width)
 
     for x, y in map_data["fires"]:
+        px, py = iso_coords(x, y, screen_width)
         draw_tile(x, y, FIRE_COLOR, surface, screen_width)
+        img = avatars.get_fire("feu")
+        if img:
+            surface.blit(img, img.get_rect(center=(px, py + 16)))
 
     for a in map_data["animals"]:
         px, py = iso_coords(a["x"], a["y"], screen_width)
