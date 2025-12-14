@@ -12,13 +12,13 @@ clock = pygame.time.Clock()
 
 avatars.load_avatars()
 
+touch_start_y = None
+
 maps = [
-    create_map("stone"),
     create_map("plains"),
     create_map("forest"),
     create_map("desert"),
     create_map("snow"),
-    create_map("volcan"),
 ]
 
 current_map_index = 0
@@ -31,12 +31,22 @@ map_surface = pygame.Surface(screen.get_size())
 running = True
 while running:
     for event in pygame.event.get():
+        if event.type == pygame.FINGERDOWN:
+            touch_start_y = event.y
+
+        if event.type == pygame.FINGERUP and not is_sliding:
+            delta = event.y - touch_start_y
+
+        if delta < -0.1 and current_map_index < len(maps) - 1:
+            slide_direction = 1
+            is_sliding = True
+
+        elif delta > 0.1 and current_map_index > 0:
+            slide_direction = -1
+            is_sliding = True
+
         if event.type == pygame.QUIT:
             running = False
-
-        if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1 and not is_sliding:
-            x, y = screen_to_grid(*pygame.mouse.get_pos(), screen.get_width())
-            add_character_to_map(maps[current_map_index], x, y)
 
         if event.type == pygame.KEYDOWN and not is_sliding:
             if event.key == pygame.K_UP and current_map_index < len(maps) - 1:

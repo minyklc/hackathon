@@ -1,17 +1,25 @@
 import pygame
 
-# Dictionnaire d'avatars
-# clé = nom
-# valeur = image pygame
-AVATARS = {}
+HUMANS = {}
+ANIMALS = {}
 
 def load_avatars():
-    AVATARS["sapiens"] = pygame.image.load("assets/avatars/sapiens.png").convert_alpha()
-    AVATARS["erectus"] = pygame.image.load("assets/avatars/erectus.png").convert_alpha()
-    AVATARS["habilis"] = pygame.image.load("assets/avatars/habilis.png").convert_alpha()
-    AVATARS["neandertal"] = pygame.image.load("assets/avatars/neandertal.png").convert_alpha()
-    AVATARS["australopitheque"] = pygame.image.load("assets/avatars/australopitheque.png").convert_alpha()
-    AVATARS["toumai"] = pygame.image.load("assets/avatars/toumai.png").convert_alpha()
+    for name in [
+        "toumai", "australopitheque", "habilis",
+        "erectus", "neandertal", "sapiens"
+    ]:
+        HUMANS[name] = pygame.image.load(
+            f"assets/avatars/{name}.png"
+        ).convert_alpha()
 
-def get_avatar(name):
-    return AVATARS.get(name)
+    for name in ["bison", "cerf", "mammouth"]:
+        ANIMALS[name] = pygame.image.load(
+            f"assets/animals/{name}.png"
+        ).convert_alpha()
+
+
+def get_human(name):
+    return HUMANS.get(name)
+
+def get_animal(name):
+    return ANIMALS.get(name)
