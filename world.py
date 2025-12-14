@@ -38,7 +38,6 @@ def create_map(index):
                 "type": random.choice(era["animals"]),
                 "timer": random.randint(120, 240)
             })
-
     for tool in era["tools"]:
         info = TOOLS[tool]
         if info["fixed"]:

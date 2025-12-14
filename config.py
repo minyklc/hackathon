@@ -6,6 +6,7 @@ TILE_H = 32
 
 AVATARS_PER_MAP = 6
 ANIMALS_PER_MAP = 3
+TOOLS_PER_MAP = 4
 
 SPECIES = {
     "toumai": "Toumaï",
@@ -19,19 +20,28 @@ SPECIES = {
 ANIMALS = {
     "mammouth": "Mammouth",
     "bison": "Bison",
-    "cerf": "Cerf"
+    "cerf": "Cerf",
+	"ver": "Ver",
+	"renne": "Renne"
 }
 
 TOOLS = {
-    "galet": {"name": "Galet aménagé", "fixed": True},
+   "galet": {"name": "Galet aménagé", "fixed": True},
     "biface": {"name": "Biface", "fixed": True},
-    "javelot": {"name": "Javelot", "fixed": False},
+    "javelot": {"name": "Javelot", "fixed": True},
+	"pomme": {"name": "pomme", "fixed": True},
+	"baie": {"name": "baie", "fixed": True},
+	"propulseur": {"name": "propulseur", "fixed": True},
+	"epieux": {"name": "epieux", "fixed": True},
+	"harpon": {"name": "harpon", "fixed": True},
+	"grattoir": {"name": "grattoir", "fixed": True},
+   "charognards": {"name": "charognards", "fixed": True}
+	
 }
 
 TIMELINE = [
     {
         "date": "–7 à –6 millions d'années",
-        "description": "Premiers homininés connus.",
         "species": ["toumai"],
         "animals": [],
 		"tools": [],
@@ -39,42 +49,37 @@ TIMELINE = [
     },
     {
         "date": "–4,2 à –2 millions d'années",
-        "description": "Bipédie affirmée.",
         "species": ["toumai", "australopitheque"],
-        "animals": ["cerf"],
-		"tools": [],
+        "animals": ["ver"],
+		"tools": ["charognards", "pomme", "baie"],
         "fire": False
     },
     {
         "date": "–2,4 à –1,6 millions d'années",
-        "description": "Premiers outils.",
         "species": ["australopitheque", "habilis"],
-        "animals": ["cerf"],
-		"tools": ["galet"],
+        "animals": [],
+		"tools": ["charognards", "galet"],
         "fire": False
     },
     {
         "date": "–1,9 à –300 000 ans",
-        "description": "Maîtrise du feu.",
         "species": ["habilis", "erectus"],
-        "animals": ["bison"],
-		"tools": ["galet", "biface"],
+        "animals": ["bison", "renne"],
+		"tools": ["galet", "biface", "epieux", "grattoir"],
         "fire": True,
     },
     {
         "date": "–400 000 à –40 000 ans",
-        "description": "Culture et chasse.",
         "species": ["erectus", "neandertal", "sapiens"],
-        "animals": ["mammouth", "bison"],
-		"tools": ["biface", "javelot"],
+        "animals": ["mammouth", "bison", "renne"],
+		"tools": ["epieux", "grattoir", "biface", "javelot"],
         "fire": True
     },
     {
         "date": "–300 000 ans à aujourd’hui",
-        "description": "Sociétés complexes.",
         "species": ["sapiens"],
-        "animals": ["cerf", "bison"],
-		"tools": ["javelot"],
+        "animals": ["cerf", "bison", "renne"],
+		"tools": ["javelot", "harpon", "propulseur"],
         "fire": True
     }
 ]

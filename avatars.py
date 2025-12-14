@@ -14,7 +14,7 @@ def load_avatars():
             f"assets/avatars/{name}.png"
         ).convert_alpha()
 
-    for name in ["bison", "cerf", "mammouth"]:
+    for name in ["bison", "cerf", "mammouth", "ver", "renne"]:
         ANIMALS[name] = pygame.image.load(
             f"assets/animals/{name}.png"
         ).convert_alpha()
@@ -24,7 +24,7 @@ def load_avatars():
             f"assets/items/{name}.png"
         ).convert_alpha()
 
-    for name in ["biface", "galet", "javelot"]:
+    for name in ["biface", "galet", "javelot", "pomme", "baie", "propulseur", "epieux", "harpon", "grattoir", "charognards"]:
         ITEM[name] = pygame.image.load(
             f"assets/items/{name}.png"
         ).convert_alpha()

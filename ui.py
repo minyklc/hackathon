@@ -7,10 +7,9 @@ def draw_ui(surface, map_data):
     era = map_data["era"]
 
     date = font.render(era["date"], True, (240,240,240))
-    desc = font.render(era["description"], True, (200,200,200))
 
     surface.blit(date, (surface.get_width()-460, 10))
-    surface.blit(desc, (surface.get_width()-460, 35))
+
 
     species = ", ".join(SPECIES[s] for s in era["species"])
     sp = font.render("Humains : " + species, True, (240,240,240))
