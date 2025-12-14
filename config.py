@@ -7,15 +7,19 @@ TILE_H = 32
 FULLSCREEN = False
 
 BIOMES = {
+	"stone":  (70, 70, 70),
     "plains": (120, 220, 120),
     "forest": (50, 160, 80),
     "desert": (220, 210, 120),
-    "snow":   (220, 220, 220)
+    "snow":   (220, 220, 220),
+	"volcan": (255, 165, 0)
 }
 
 BIOME_CHARACTERS = {
+	"stone": ["toumai"],
     "plains": ["erectus"],
     "forest": ["sapiens"],
     "desert": ["habilis"],
-    "snow": ["neandertal"]
+    "snow": ["neandertal"],
+	"volcan": ["australopitheque"]
 }

@@ -13,10 +13,12 @@ clock = pygame.time.Clock()
 avatars.load_avatars()
 
 maps = [
+    create_map("stone"),
     create_map("plains"),
     create_map("forest"),
     create_map("desert"),
     create_map("snow"),
+    create_map("volcan"),
 ]
 
 current_map_index = 0
