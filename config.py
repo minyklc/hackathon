@@ -22,19 +22,27 @@ ANIMALS = {
     "cerf": "Cerf"
 }
 
+TOOLS = {
+    "galet": {"name": "Galet aménagé", "fixed": True},
+    "biface": {"name": "Biface", "fixed": True},
+    "javelot": {"name": "Javelot", "fixed": False},
+}
+
 TIMELINE = [
     {
         "date": "–7 à –6 millions d'années",
         "description": "Premiers homininés connus.",
         "species": ["toumai"],
         "animals": [],
-        "fire": False
+		"tools": [],
+        "fire": False,
     },
     {
         "date": "–4,2 à –2 millions d'années",
         "description": "Bipédie affirmée.",
         "species": ["toumai", "australopitheque"],
         "animals": ["cerf"],
+		"tools": [],
         "fire": False
     },
     {
@@ -42,6 +50,7 @@ TIMELINE = [
         "description": "Premiers outils.",
         "species": ["australopitheque", "habilis"],
         "animals": ["cerf"],
+		"tools": ["galet"],
         "fire": False
     },
     {
@@ -49,13 +58,15 @@ TIMELINE = [
         "description": "Maîtrise du feu.",
         "species": ["habilis", "erectus"],
         "animals": ["bison"],
-        "fire": True
+		"tools": ["galet", "biface"],
+        "fire": True,
     },
     {
         "date": "–400 000 à –40 000 ans",
         "description": "Culture et chasse.",
         "species": ["erectus", "neandertal", "sapiens"],
         "animals": ["mammouth", "bison"],
+		"tools": ["biface", "javelot"],
         "fire": True
     },
     {
@@ -63,6 +74,7 @@ TIMELINE = [
         "description": "Sociétés complexes.",
         "species": ["sapiens"],
         "animals": ["cerf", "bison"],
+		"tools": ["javelot"],
         "fire": True
     }
 ]

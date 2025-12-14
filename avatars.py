@@ -3,6 +3,7 @@ import pygame
 HUMANS = {}
 ANIMALS = {}
 FIRE = {}
+ITEM = {}
 
 def load_avatars():
     for name in [
@@ -20,9 +21,16 @@ def load_avatars():
     
     for name in ["feu"]:
         FIRE[name] = pygame.image.load(
-            f"assets/tools/{name}.png"
+            f"assets/items/{name}.png"
         ).convert_alpha()
 
+    for name in ["biface", "galet", "javelot"]:
+        ITEM[name] = pygame.image.load(
+            f"assets/items/{name}.png"
+        ).convert_alpha()
+
+def get_item(name):
+    return ITEM.get(name)
 
 def get_human(name):
     return HUMANS.get(name)
@@ -32,4 +40,5 @@ def get_animal(name):
 
 def get_fire(name):
     return FIRE.get(name)
+
 

@@ -1,5 +1,5 @@
 import random
-from config import MAP_W, MAP_H, TIMELINE, AVATARS_PER_MAP, ANIMALS_PER_MAP
+from config import MAP_W, MAP_H, TIMELINE, AVATARS_PER_MAP, ANIMALS_PER_MAP, TOOLS
 
 def create_map(index):
     era = TIMELINE[index]
@@ -9,7 +9,8 @@ def create_map(index):
         "characters": [],
         "animals": [],
         "fires": [],
-        "rocks": []
+        "rocks": [],
+        "items": []
     }
 
     if era["fire"]:
@@ -37,6 +38,21 @@ def create_map(index):
                 "type": random.choice(era["animals"]),
                 "timer": random.randint(120, 240)
             })
+
+    for tool in era["tools"]:
+        info = TOOLS[tool]
+        if info["fixed"]:
+            zone = random.choice(map_data["rocks"])
+            x, y = zone
+        else:
+            x = random.randint(0, MAP_W-1)
+            y = random.randint(0, MAP_H-1)
+
+        map_data["items"].append({
+            "type": tool,
+            "x": x,
+            "y": y
+        })
 
     return map_data
 
